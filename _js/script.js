@@ -3,4 +3,7 @@ var BASEURL = 'http://api.rottentomatoes.com/api/public/v1.0/'; // Base URL for 
 
 $(document).ready(function() {
 
+  var genres = ["Action & Adventure", "Animation", "Comedy", "Drama", "Horror", "Kids & Family", "Mystery & Suspense", "Romance", "Science Fiction & Fantasy"];
+
+
 }
