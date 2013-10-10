@@ -11,7 +11,14 @@
 <body>
   <div id="freeform">
     This is where we get the user to describe genres of a few movies. It will be hidden when the user submits their answers.
-    <div>movie of genre type 1. Each movie div will have: 1. image, 2. description, 3. text fields</div>
+    <div>movie of genre type 1. Each movie div will have: 1. image, 2. description, 3. text fields
+      Example:
+      Movie: The Matrix
+      Image: from Rotten Tomatoes API 
+      Text field 1: user puts in "scifi"
+      Text field 2: user puts in "action"
+      Text field 3: left blank
+    </div>
     <div>movie of genre type 2</div>
     <div>movie of genre type 3</div>
     <input type="button" value="submit values or something">
@@ -19,7 +26,14 @@
 
   <div id="autocomplete">
     This is where we get the user to describe genres of a few different movies, this time with a dropdown autocomplete. It's hidden at first, shown when the user completes the freeform genres, and hidden for the results.
-    <div>movie of genre type 1. Each movie div will have: 1. image, 2. description, 3. text fields</div>
+    <div>movie of genre type 1. Each movie div will have: 1. image, 2. description, 3. text fields
+      Example:
+      Movie: Star Trek
+      Image: from Rotten Tomatoes API
+      Text field 1: user puts in autocorrect/suggested "Science Fiction & Fantasy"
+      Text field 2: user puts in autocorrect/suggested "Action & Adventure"
+      Text field 3: blank?
+    </div>
     <div>movie of genre type 2</div>
     <div>movie of genre type 3</div>
     <input type="button" value="submit values or something">
@@ -27,9 +41,16 @@
 
   <div id="results">
     This is where we can hopefully show differences
-    <div>genre type 1 + results</div>
+    <div>genre type 1 + results
+      Example:
+      The Matrix and Star Trek movie images from RT API
+      Freeform: "scifi"
+      Suggested: "Science Fiction & Fantasy"
+    </div>
     <div>genre type 2 + results</div>
     <div>genre type 3 + results</div>
+
+    <div>Some blurb about people are lazy, schemas aren't neutral, metrics influence results?</div>
 
   </div>
 
