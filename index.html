@@ -9,23 +9,60 @@
 </head>
 
 <body>
-  <div id="freeform">
-    This is where we get the user to describe genres of a few movies. It will be hidden when the user submits their answers.
-    <div>movie of genre type 1. Each movie div will have: 1. image, 2. description, 3. text fields
-      Example:
-      Movie: The Matrix
-      Image: from Rotten Tomatoes API 
-      Text field 1: user puts in "scifi"
-      Text field 2: user puts in "action"
-      Text field 3: left blank
+  <div class="container" id="freeform">
+    <div class="title">
+      This is where we get the user to describe genres of a few movies. It will be hidden when the user submits their answers.
     </div>
-    <div>movie of genre type 2</div>
-    <div>movie of genre type 3</div>
-    <input type="button" value="submit values or something">
+    <div class="movieItem">
+      <div class="movieImage">
+        <img src="http://www.bubblews.com/assets/images/news/1452175945_1367036341.jpg"
+          width="300">
+      </div>
+      <div class="movieTitle">
+        Notebook
+      </div>
+      <div class="movieDesc">
+        This is a romantic movie released in 2000...
+      </div>
+      <div class="movieText">
+        <input type="text" placeholder="type proper genre of this movie">
+      </div>
+    </div>
+    <div class="movieItem">
+      <div class="movieImage">
+        <img src="http://blog.dartmouthapologia.org/wp-content/uploads/2013/02/dark-knight.jpg"
+          width="300">
+      </div>
+      <div class="movieTitle">
+        The Dark Knight
+      </div>
+      <div class="movieDesc">
+        This is Christopher Nolan's Batman.
+      </div>
+      <div class="movieText">
+      </div>
+    </div>
+    <div class="movieItem">
+      <div class="movieImage">
+        <img src="http://www.impawards.com/2013/posters/internship_ver5_xlg.jpg"
+          width="300">
+      </div>
+      <div class="movieTitle">
+        Internship
+      </div>
+      <div class="movieDesc">
+        This is about nerds at Google.
+      </div>
+      <div class="movieText">
+      </div>
+    </div>
+    <input type="submit" value="submit">
   </div>
 
   <div id="autocomplete">
-    This is where we get the user to describe genres of a few different movies, this time with a dropdown autocomplete. It's hidden at first, shown when the user completes the freeform genres, and hidden for the results.
+    <div class="title">
+      This is where we get the user to describe genres of a few different movies, this time with a dropdown autocomplete. It's hidden at first, shown when the user completes the freeform genres, and hidden for the results.
+    </div>
     <div>movie of genre type 1. Each movie div will have: 1. image, 2. description, 3. text fields
       Example:
       Movie: Star Trek
@@ -36,7 +73,7 @@
     </div>
     <div>movie of genre type 2</div>
     <div>movie of genre type 3</div>
-    <input type="button" value="submit values or something">
+    <input type="button" value="submit">
   </div>
 
   <div id="results">

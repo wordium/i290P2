@@ -1,1 +1,36 @@
 /*** styles ***/
+
+body {
+	font-family: helvetica;
+}
+
+.container {
+	width: 1000px;
+	margin: 3em auto 10em ;
+}
+
+.title {
+	text-align:center;
+	
+	font-size: 30px;
+}
+
+.movieItem {
+	font-size: 20px;
+	width: 330px;
+	float: left;
+	margin: auto 0.05em;
+}
+
+.container input[type=submit] {
+	margin: auto 80em;
+}
+
+.movieDesc {
+	font-size: 0.7em;
+	margin-top: 0.5em;
+}
+
+.movieText input[type=text] {
+	width: 20em;
+}
