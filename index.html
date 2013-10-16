@@ -5,8 +5,7 @@
   <link rel="stylesheet" href="_css/style.css">
   <script src="_js/jquery-1.10.2.min.js"></script>
   <script src="_js/jquery-ui-1.10.3.custom.min.js"></script>
-  <script src="_js/script.js"></script>
-  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <script src="_js/script.js"></script>    
 </head>
 
 <body> 
@@ -19,6 +18,64 @@
     <p class="instructions">
       Below are three movies, which you may or may not have seen. For each, write down up to three genres that apply.
     </p>
+
+    <!-- Movie 1 -->
+    <div class="movieItem" id="freeform1">
+      <div class="movieImage">
+        <img src="http://www.bubblews.com/assets/images/news/1452175945_1367036341.jpg"
+          width="300">
+      </div>
+      <div class="movieTitle">
+        Notebook
+      </div>
+      <div class="movieDesc">
+        This is a romantic movie released in 2000...
+      </div>
+      <div class="movieText">
+        <input type="text" placeholder="genre">
+        <input type="text" placeholder="genre (optional)">
+        <input type="text" placeholder="genre (optional)">
+      </div>
+    </div>
+
+    <!-- Movie 2 -->
+    <div class="movieItem" id="freeform2">
+      <div class="movieImage">
+        <img src="http://blog.dartmouthapologia.org/wp-content/uploads/2013/02/dark-knight.jpg"
+          width="300">
+      </div>
+      <div class="movieTitle">
+        The Dark Knight
+      </div>
+      <div class="movieDesc">
+        This is Christopher Nolan's Batman.
+      </div>
+      <div class="movieText">
+        <input type="text" placeholder="genre">
+        <input type="text" placeholder="genre (optional)">
+        <input type="text" placeholder="genre (optional)">
+      </div>
+    </div>
+
+    <!-- Movie 3 -->
+    <div class="movieItem" id="freeform3">
+      <div class="movieImage">
+        <img src="http://www.impawards.com/2013/posters/internship_ver5_xlg.jpg"
+          width="300">
+      </div>
+      <div class="movieTitle">
+        Internship
+      </div>
+      <div class="movieDesc">
+        This is about nerds at Google.
+      </div>
+      <div class="movieText">
+        <input type="text" placeholder="genre">
+        <input type="text" placeholder="genre (optional)">
+        <input type="text" placeholder="genre (optional)">
+      </div>
+    </div>
+    <input type="submit" value="submit">
   </div>
 
   <!-- Autocomplete genre description -->
@@ -26,6 +83,64 @@
     <p class="instructions">
       Here are three different movies, which you may or may not have seen. For each, select up to three different genres that apply.
     </p>
+
+    <!-- movie 1 -->
+    <div class="movieItem" id="autocomplete1">
+      <div class="movieImage">
+        <img src="http://www.bubblews.com/assets/images/news/1452175945_1367036341.jpg"
+          width="300">
+      </div>
+      <div class="movieTitle">
+        Notebook
+      </div>
+      <div class="movieDesc">
+        This is a romantic movie released in 2000...
+      </div>
+      <div class="movieText">
+        <input type="text" placeholder="genre">
+        <input type="text" placeholder="genre (optional)">
+        <input type="text" placeholder="genre (optional)">
+      </div>
+    </div>
+
+    <!-- movie 2 -->
+    <div class="movieItem" id="autocomplete2">
+      <div class="movieImage">
+        <img src="http://blog.dartmouthapologia.org/wp-content/uploads/2013/02/dark-knight.jpg"
+          width="300">
+      </div>
+      <div class="movieTitle">
+        The Dark Knight
+      </div>
+      <div class="movieDesc">
+        This is Christopher Nolan's Batman.
+      </div>
+      <div class="movieText">
+        <input type="text" placeholder="genre">
+        <input type="text" placeholder="genre (optional)">
+        <input type="text" placeholder="genre (optional)">
+      </div>
+    </div>    
+
+    <!-- movie 3 -->
+    <div class="movieItem" id="autocomplete3">
+      <div class="movieImage">
+        <img src="http://www.impawards.com/2013/posters/internship_ver5_xlg.jpg"
+          width="300">
+      </div>
+      <div class="movieTitle">
+        Internship
+      </div>
+      <div class="movieDesc">
+        This is about nerds at Google.
+      </div>
+      <div class="movieText">
+        <input type="text" placeholder="genre">
+        <input type="text" placeholder="genre (optional)">
+        <input type="text" placeholder="genre (optional)">
+      </div>
+    </div>
+    <input type="submit" value="submit">
   </div>
 
   <!-- Comparison results -->
@@ -33,8 +148,67 @@
     <div class="title">
       Compare what you wrote down with what you picked from the list.
     </div>
+
+    <div id="comparison1" class="movieItem">
+      <ul>
+        <li>genre</li>
+        <li>genre if there is a second</li>
+        <li>genre if there is a third </li>
+      </ul>
+
+      <ul>
+        <li>genre</li>
+        <li>genre if there is a second</li>
+        <li>genre if there is a third </li>
+      </ul>
+    </div>
+
+    <div id="comparison2" class="movieItem">
+      <ul>
+        <li>genre</li>
+        <li>genre if there is a second</li>
+        <li>genre if there is a third </li>
+      </ul>
+
+      <ul>
+        <li>genre</li>
+        <li>genre if there is a second</li>
+        <li>genre if there is a third </li>
+      </ul>
+    </div>
+
+    <div id="comparison3" class="movieItem">
+      <ul>
+        <li>genre</li>
+        <li>genre if there is a second</li>
+        <li>genre if there is a third </li>
+      </ul>
+
+      <ul>
+        <li>genre</li>
+        <li>genre if there is a second</li>
+        <li>genre if there is a third </li>
+      </ul>
+    </div>
+
+    <p>Some text about metacrap, schemas, laziness</p>
   </div>
-  
+
+  <!--
+    This is where we can hopefully show differences
+    <div>genre type 1 + results
+      Example:
+      The Matrix and Star Trek movie images from RT API
+      Freeform: "scifi"
+      Suggested: "Science Fiction & Fantasy"
+    </div>
+    <div>genre type 2 + results</div>
+    <div>genre type 3 + results</div>
+
+    <div>Some blurb about people are lazy, schemas aren't neutral, metrics influence results?</div>
+
+  </div-->
+
 </body>
 
 </html>
