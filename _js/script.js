@@ -27,11 +27,11 @@ $(document).ready(function() {
      getMovieDetails();
      
      $(document).on('keypress','#autocomplete input.ui-autocomplete-input',function (event){ 
-          $(this).focus().autocomplete({
+          $(this).autocomplete({
                source: genres
           });     
      });
-     
+ 
      //$("#theinternship-text1").autocomplete({
      //     source: genres
      //});
@@ -42,10 +42,24 @@ $(document).ready(function() {
 
 function upLoadFree() {
      $( "#freeform").hide();
+     //<li>genre</li>
      $('input','#freeform').each(function(i,e){
           var srcText = $("#"+e.id).val();
-          var destText = e.name +'-label'+ (e.id).slice(-1);
-          $("#"+destText).text(srcText);
+          
+          if (i <3) {
+               $("#comparison1freeList").append('<li>' + srcText + '</li>')
+               console.log(i);
+          }
+          else if (i < 6) {
+               $("#comparison2freeList").append('<li>' + srcText + '</li>')
+               console.log(i);
+          }
+          else {
+               $("#comparison3freeList").append('<li>' + srcText + '</li>')
+               console.log(i);               
+          }
+          //var destText = e.name +'-label'+ (e.id).slice(-1);
+          //$("#"+destText).text(srcText);
      });
 }
 
@@ -53,8 +67,19 @@ function upLoadAuto() {
      $( "#autocomplete").hide();
      $('input','#autocomplete').each(function(i,e){
           var srcText = $("#"+e.id).val();
-          var destText = e.name +'-label'+ (e.id).slice(-1);
-          $("#"+destText).text(srcText);
+          
+          if (i <3) {
+               $("#comparison1freeList").append('<li>' + srcText + '</li>')
+               console.log(i);
+          }
+          else if (i < 6) {
+               $("#comparison2freeList").append('<li>' + srcText + '</li>')
+               console.log(i);
+          }
+          else {
+               $("#comparison3freeList").append('<li>' + srcText + '</li>')
+               console.log(i);               
+          }
      });
 }
 
@@ -68,25 +93,30 @@ function getMovieDetails() {
           }).success(function (data) { 
                var titleStr = data.title.replace(/\s+/g,"").toLowerCase();
                var textFields = $('<div class="movieText" />');
-               var labelFields = textFields.clone();
+               var labelFields = ""//textFields.clone();
                for(var i = 1; i <= 3; i++) {
-                    //<span class='shortLogo'><img class='shortHistTeam' src='img/teams/"+history[key].t_name+".jpg'></span>
-                    labelFields.append('<span id="'+titleStr+ '-label'+i+ '" class = "movie-labels"> genre</span>');
-                    if (key < 3) {
-                         textFields.append('<input id="'+titleStr+ '-text'+i+ '" name="'+titleStr+'" placeholder="type proper genre of this movie" />');
+                    if (i == 1) {
+                         var placeText = "genre";
                     }
                     else {
-                         textFields.append('<input class="ui-autocomplete-input" id="'+titleStr+ '-text'+i+ '" name="'+titleStr+'" placeholder="type proper genre of this movie" autocomplete="off"/>');   
+                         var placeText = "genre (optional)";     
                     }
                     
-               }     
+                    //labelFields.append('<span id="'+titleStr+ '-label'+i+ '" class = "movie-labels"> genre</span>');
+                    if (key < 3) {
+                         textFields.append('<input id="'+titleStr+ '-text'+i+ '" type = "text" placeholder="' + placeText +'"/>');
+                    }
+                    else {
+                         textFields.append('<input class="ui-autocomplete-input" id="'+titleStr+ '-text'+i+ '" type = "text" placeholder="' + placeText + '" autocomplete="off"/>');   
+                    }
+                    
+               }   
                var divs = $('<div class="movieItem"></div>')
-                           .append('<div class="movieImage"><img src="' + data.posters.detailed + '"><p class="movieTitle">' + data.title + '</p></div>')
-               var rslts =divs.clone();
-
+                           .append('<div class="movieImage"><img src="' + data.posters.detailed + '"><div class="movieTitle">' + data.title + '</div></div>')
+               //var rslts =divs.clone();
                
-               divs.append('<div class="movieDesc"><p>' + data.critics_consensus + '</p></div>').append(textFields);
-               rslts.append(labelFields);
+               divs.append('<div class="movieDesc">' + data.critics_consensus + '</div>').append(textFields);
+               //
 
                if (key < 3) {
                     $("#freeform").append(divs);
@@ -94,7 +124,7 @@ function getMovieDetails() {
                else {
                     $("#autocomplete").append(divs);    
                }
-               $("#results").append(rslts); })
+            })
 
             .error(function () { 
                console.log(error);
@@ -102,13 +132,19 @@ function getMovieDetails() {
                alert('gulp!'); })
             ;
       });
+     
 
      $.when.apply($,$deferreds).then(function(){
              console.log("All ajax finished");
-             $('#freeform').append('<button type="button" onclick="upLoadFree(); return false;">Click Me!</button>');
+             $('#freeform').append('<button type="button" onclick="upLoadFree(); return false;">Submit</button>');
              console.log("freeform button created");
-             $('#autocomplete').append('<button type="button" onclick="upLoadAuto(); return false;">Click Me!</button>');
-             console.log("autocomplete button created");  
+             $('#autocomplete').append('<button type="button" onclick="upLoadAuto(); return false;">Submit</button>');
+             console.log("autocomplete button created");
+             for(var i = 1; i <= 3; i++) {
+                  var rslts = $('<div id="comparison'+ i +'" class="movieItem"><ul id="comparison'+ i +'freeList"></ul><ul id="comparison'+ i +'autoList"></ul>');
+                  $("#results").append(rslts);
+                  //rslts.append(labelFields);
+             }
          });
     
 }

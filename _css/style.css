@@ -1,43 +1,65 @@
-/*** styles ***/
+/*** Colors ***/
+/*
+Black 000000
+Dark blue 263248
+Grey blue 7E8AA2
+White FFFFFF
+Orange FF9800
+*/
+
+/*** structure ***/
 
 body {
-	font-family: helvetica;
+	font-family: 'Helvetica', sans-serif;
+	background-color: #263248;
+	color: #fff;
+	font-size: 62.5%;
 }
-
-/*div {
-	border: black solid 1pt;
-}*/
 
 .container {
 	width: 1000px;
 	margin: 3em auto 10em ;
-}
+	padding: 3px;
+	background-color: #7E8AA2;
+	border-radius: 6px;
+	border: 5px solid #FF9800;
+} 
 
+/*** basic styles ***/
 .title {
 	text-align:center;
-	
 	font-size: 30px;
 }
 
+.instructions {
+	text-align: center;
+}
+
+img {
+	height: 267px;
+	width: 180px;
+	overflow: hidden;
+	border: 1px solid #000;
+}
+
+/*** movie info styles ***/
 .movieItem {
 	font-size: 20px;
-	width: 330px;
+	width: 33%;
 	float: left;
-	margin: auto 0.05em;
+	margin: auto auto;
+	text-align: center;
 }
 
 .container input[type=submit] {
-	margin: auto 80em;
+	margin: auto auto;
 }
-.movieImage {
-	width: 200px;
-	height: 300px;
-}
+
 .movieDesc {
 	font-size: 0.7em;
 	margin-top: 0.5em;
 }
 
 .movieText input[type=text] {
-	width: 14em;
+	width: 20em;
 }

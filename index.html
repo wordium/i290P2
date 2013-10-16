@@ -2,6 +2,7 @@
 <html>
 
 <head>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
   <link rel="stylesheet" href="_css/style.css">
   <script src="_js/jquery-1.10.2.min.js"></script>
   <script src="_js/jquery-ui-1.10.3.custom.min.js"></script>
@@ -10,11 +11,12 @@
 </head>
 
 <body>
+  <!-- Freeform genre description -->
   <div class="container" id="freeform">
-    <div class="title">
-      Take a look at picture, title, and description of each movie, and write down three proper genre names.
-    </div>
-<!--    <div class="movieItem">
+    <p class="instructions">
+      Below are three movies, which you may or may not have seen. For each, write down up to three genres that apply.
+    </p>
+    <!--    <div class="movieItem">
        <div class="movieImage">
         <img src="http://www.bubblews.com/assets/images/news/1452175945_1367036341.jpg"
           width="300">
@@ -69,10 +71,11 @@
     <input type="submit" value="submit">-->
   </div>
 
+  <!-- Autocomplete genre description -->
   <div class="container" id="autocomplete">
-    <div class="title">
-      Take a look at picture, title, and description of each movie, and pick three proper genre names.
-    </div>
+    <p class="instructions">
+      Here are three different movies, which you may or may not have seen. For each, select up to three different genres that apply.
+    </p>
     <!--<div class="movieItem">
       <div class="movieImage">
         <img src="http://www.bubblews.com/assets/images/news/1452175945_1367036341.jpg"
@@ -126,7 +129,8 @@
     </div>
     <input type="submit" value="submit">-->
   </div>
-
+  
+  <!-- Comparison results -->
   <div class="container" id="results">
     <div class="title">
       Compare what you wrote down with what you picked from the list.
