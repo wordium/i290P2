@@ -8,12 +8,20 @@
   <script src="_js/script.js"></script>    
 </head>
 
-<body>
+<body>    
+
+  <h1 class="title">
+    Genre Guesser
+  </h1>
+
+  <!-- Freeform genre description -->
   <div class="container" id="freeform">
-    <div class="title">
-      Take a look at picture, title, and description of each movie, and write down three proper genre names.
-    </div>
-    <div class="movieItem">
+    <p class="instructions">
+      Below are three movies, which you may or may not have seen. For each, write down up to three genres that apply.
+    </p>
+
+    <!-- Movie 1 -->
+    <div class="movieItem" id="freeform1">
       <div class="movieImage">
         <img src="http://www.bubblews.com/assets/images/news/1452175945_1367036341.jpg"
           width="300">
@@ -30,7 +38,9 @@
         <input type="text" placeholder="type proper genre of this movie">
       </div>
     </div>
-    <div class="movieItem">
+
+    <!-- Movie 2 -->
+    <div class="movieItem" id="freeform2">
       <div class="movieImage">
         <img src="http://blog.dartmouthapologia.org/wp-content/uploads/2013/02/dark-knight.jpg"
           width="300">
@@ -47,7 +57,9 @@
         <input type="text" placeholder="type proper genre of this movie">
       </div>
     </div>
-    <div class="movieItem">
+
+    <!-- Movie 3 -->
+    <div class="movieItem" id="freeform3">
       <div class="movieImage">
         <img src="http://www.impawards.com/2013/posters/internship_ver5_xlg.jpg"
           width="300">
@@ -67,11 +79,14 @@
     <input type="submit" value="submit">
   </div>
 
+  <!-- Autocomplete genre description -->
   <div class="container" id="autocomplete">
     <div class="title">
       Take a look at picture, title, and description of each movie, and pick three proper genre names.
     </div>
-    <div class="movieItem">
+
+    <!-- movie 1 -->
+    <div class="movieItem" id="autocomplete1">
       <div class="movieImage">
         <img src="http://www.bubblews.com/assets/images/news/1452175945_1367036341.jpg"
           width="300">
@@ -88,7 +103,9 @@
         <input type="text" placeholder="type proper genre of this movie">
       </div>
     </div>
-    <div class="movieItem">
+
+    <!-- movie 2 -->
+    <div class="movieItem" id="autocomplete2">
       <div class="movieImage">
         <img src="http://blog.dartmouthapologia.org/wp-content/uploads/2013/02/dark-knight.jpg"
           width="300">
@@ -104,8 +121,10 @@
         <input type="text" placeholder="type proper genre of this movie">
         <input type="text" placeholder="type proper genre of this movie">
       </div>
-    </div>
-    <div class="movieItem">
+    </div>    
+
+    <!-- movie 3 -->
+    <div class="movieItem" id="autocomplete3">
       <div class="movieImage">
         <img src="http://www.impawards.com/2013/posters/internship_ver5_xlg.jpg"
           width="300">
@@ -125,10 +144,12 @@
     <input type="submit" value="submit">
   </div>
 
+  <!-- Comparison results -->
   <div class="container" id="results">
     <div class="title">
       Compare what you wrote down with what you picked from the list.
     </div>
+
     <div class="movieItem">
       <div class="movieImage">
         <img src="http://www.bubblews.com/assets/images/news/1452175945_1367036341.jpg"
@@ -146,6 +167,7 @@
         <input type="text" placeholder="type proper genre of this movie">
       </div>
     </div>
+
     <div class="movieItem">
       <div class="movieImage">
         <img src="http://blog.dartmouthapologia.org/wp-content/uploads/2013/02/dark-knight.jpg"
@@ -163,6 +185,7 @@
         <input type="text" placeholder="type proper genre of this movie">
       </div>
     </div>
+
     <div class="movieItem">
       <div class="movieImage">
         <img src="http://www.impawards.com/2013/posters/internship_ver5_xlg.jpg"

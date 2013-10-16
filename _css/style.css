@@ -1,7 +1,7 @@
-/*** styles ***/
+/*** structure ***/
 
 body {
-	font-family: helvetica;
+	font-family: 'Helvetica', sans-serif;
 }
 
 .container {
@@ -9,12 +9,18 @@ body {
 	margin: 3em auto 10em ;
 }
 
+
+/*** basic styles ***/
 .title {
 	text-align:center;
-	
 	font-size: 30px;
 }
 
+.instructions {
+	text-align: center;
+}
+
+/*** movie info styles ***/
 .movieItem {
 	font-size: 20px;
 	width: 330px;
