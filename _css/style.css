@@ -15,6 +15,10 @@ body {
 	color: #fff;
 }
 
+/*div {
+	border: black solid 1pt;
+}*/
+
 .container {
 	width: 1000px;
 	margin: 3em auto 10em ;
@@ -53,12 +57,15 @@ img {
 .container input[type=submit] {
 	margin: auto auto;
 }
-
+.movieImage {
+	width: 200px;
+	height: 300px;
+}
 .movieDesc {
 	font-size: 0.7em;
 	margin-top: 0.5em;
 }
 
 .movieText input[type=text] {
-	width: 20em;
+	width: 14em;
 }
