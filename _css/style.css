@@ -53,11 +53,6 @@ img {
 
 .container input[type=submit] {
 	margin: auto auto;
-
-}
-.movieImage {
-	width: 200px;
-	height: 300px;
 }
 
 .movieDesc {
