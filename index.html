@@ -3,6 +3,7 @@
 
 <head>
   <link rel="stylesheet" href="_css/style.css">
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
   <script src="_js/jquery-1.10.2.min.js"></script>
   <script src="_js/jquery-ui-1.10.3.custom.min.js"></script>
   <script src="_js/script.js"></script>    
@@ -25,9 +26,7 @@
         <img src="http://www.bubblews.com/assets/images/news/1452175945_1367036341.jpg"
           width="300">
       </div>
-      <div class="movieTitle">
-        Notebook
-      </div>
+      <div class="movieTitle">Notebook</div>
       <div class="movieDesc">
         This is a romantic movie released in 2000...
       </div>
@@ -75,7 +74,7 @@
         <input type="text" placeholder="genre (optional)">
       </div>
     </div>
-    <input type="submit" value="submit">
+    <button type="button" onclick="upLoadInput('freeform', 'autocomplete'); return false;">Submit</button>
   </div>
 
   <!-- Autocomplete genre description -->
@@ -140,7 +139,7 @@
         <input type="text" placeholder="genre (optional)">
       </div>
     </div>
-    <input type="submit" value="submit">
+    <button type="button" onclick="upLoadInput('autocomplete', 'results'); return false;">Submit</button>
   </div>
 
   <!-- Comparison results -->
@@ -150,44 +149,44 @@
     </div>
 
     <div id="comparison1" class="movieItem">
-      <ul>
-        <li>genre</li>
+      <ul id="freeformList1">
+        <!--<li>genre</li>
         <li>genre if there is a second</li>
-        <li>genre if there is a third </li>
+        <li>genre if there is a third </li>-->
       </ul>
 
-      <ul>
-        <li>genre</li>
+      <ul id="autocompleteList1">
+        <!--<li>genre</li>
         <li>genre if there is a second</li>
-        <li>genre if there is a third </li>
+        <li>genre if there is a third </li>-->
       </ul>
     </div>
 
     <div id="comparison2" class="movieItem">
-      <ul>
-        <li>genre</li>
+      <ul id="freeformList2">
+        <!--<li>genre</li>
         <li>genre if there is a second</li>
-        <li>genre if there is a third </li>
+        <li>genre if there is a third </li>-->
       </ul>
 
-      <ul>
-        <li>genre</li>
+      <ul id="autocompleteList2">
+        <!--<li>genre</li>
         <li>genre if there is a second</li>
-        <li>genre if there is a third </li>
+        <li>genre if there is a third </li>-->
       </ul>
     </div>
 
     <div id="comparison3" class="movieItem">
-      <ul>
-        <li>genre</li>
+      <ul id="freeformList3">
+        <!--<li>genre</li>
         <li>genre if there is a second</li>
-        <li>genre if there is a third </li>
+        <li>genre if there is a third </li>-->
       </ul>
 
-      <ul>
-        <li>genre</li>
+      <ul id="autocompleteList3">
+        <!--<li>genre</li>
         <li>genre if there is a second</li>
-        <li>genre if there is a third </li>
+        <li>genre if there is a third </li>-->
       </ul>
     </div>
 
