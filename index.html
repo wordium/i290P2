@@ -2,39 +2,43 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
   <link rel="stylesheet" href="_css/style.css">
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
   <script src="_js/jquery-1.10.2.min.js"></script>
   <script src="_js/jquery-ui-1.10.3.custom.min.js"></script>
-  <script src="_js/script.js"></script>
-  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <script src="_js/script.js"></script>    
 </head>
 
-<body>
+<body> 
+  <h1 class="title">
+    Genre Guesser
+  </h1>
+
   <!-- Freeform genre description -->
   <div class="container" id="freeform">
     <p class="instructions">
       Below are three movies, which you may or may not have seen. For each, write down up to three genres that apply.
     </p>
-    <!--    <div class="movieItem">
-       <div class="movieImage">
+
+    <!-- Movie 1 -->
+    <div class="movieItem" id="freeform1">
+      <div class="movieImage1">
         <img src="http://www.bubblews.com/assets/images/news/1452175945_1367036341.jpg"
           width="300">
       </div>
-      <div class="movieTitle">
-        Notebook
-      </div>
+      <div class="movieTitle">Notebook</div>
       <div class="movieDesc">
         This is a romantic movie released in 2000...
       </div>
-
       <div class="movieText">
-        <input type="text" placeholder="type proper genre of this movie">
-        <input type="text" placeholder="type proper genre of this movie">
-        <input type="text" placeholder="type proper genre of this movie">
+        <input type="text" placeholder="genre" id="mov1genre1">
+        <input type="text" placeholder="genre (optional)">
+        <input type="text" placeholder="genre (optional)">
       </div>
     </div>
-    <div class="movieItem">
+
+    <!-- Movie 2 -->
+    <div class="movieItem" id="freeform2">
       <div class="movieImage">
         <img src="http://blog.dartmouthapologia.org/wp-content/uploads/2013/02/dark-knight.jpg"
           width="300">
@@ -46,12 +50,14 @@
         This is Christopher Nolan's Batman.
       </div>
       <div class="movieText">
-        <input type="text" placeholder="type proper genre of this movie">
-        <input type="text" placeholder="type proper genre of this movie">
-        <input type="text" placeholder="type proper genre of this movie">
+        <input type="text" placeholder="genre">
+        <input type="text" placeholder="genre (optional)">
+        <input type="text" placeholder="genre (optional)">
       </div>
     </div>
-    <div class="movieItem">
+
+    <!-- Movie 3 -->
+    <div class="movieItem" id="freeform3">
       <div class="movieImage">
         <img src="http://www.impawards.com/2013/posters/internship_ver5_xlg.jpg"
           width="300">
@@ -63,12 +69,12 @@
         This is about nerds at Google.
       </div>
       <div class="movieText">
-        <input type="text" placeholder="type proper genre of this movie">
-        <input type="text" placeholder="type proper genre of this movie">
-        <input type="text" placeholder="type proper genre of this movie">
+        <input type="text" placeholder="genre3">
+        <input type="text" placeholder="genre (optional)">
+        <input type="text" placeholder="genre (optional)">
       </div>
     </div>
-    <input type="submit" value="submit">-->
+    <button type="button" onclick="upLoadInput('freeform', 'autocomplete'); return false;">Submit</button>
   </div>
 
   <!-- Autocomplete genre description -->
@@ -76,7 +82,9 @@
     <p class="instructions">
       Here are three different movies, which you may or may not have seen. For each, select up to three different genres that apply.
     </p>
-    <!--<div class="movieItem">
+
+    <!-- movie 1 -->
+    <div class="movieItem" id="autocomplete1">
       <div class="movieImage">
         <img src="http://www.bubblews.com/assets/images/news/1452175945_1367036341.jpg"
           width="300">
@@ -88,12 +96,14 @@
         This is a romantic movie released in 2000...
       </div>
       <div class="movieText">
-        <input id = "genres-autocomplete" >
-        <input id = "genres-autocomplete" type="text" placeholder="type proper genre of this movie">
-        <input id = "genres-autocomplete" type="text" placeholder="type proper genre of this movie">
+        <input type="text" placeholder="genre">
+        <input type="text" placeholder="genre (optional)">
+        <input type="text" placeholder="genre (optional)">
       </div>
     </div>
-    <div class="movieItem">
+
+    <!-- movie 2 -->
+    <div class="movieItem" id="autocomplete2">
       <div class="movieImage">
         <img src="http://blog.dartmouthapologia.org/wp-content/uploads/2013/02/dark-knight.jpg"
           width="300">
@@ -105,12 +115,14 @@
         This is Christopher Nolan's Batman.
       </div>
       <div class="movieText">
-        <input type="text" placeholder="type proper genre of this movie">
-        <input type="text" placeholder="type proper genre of this movie">
-        <input type="text" placeholder="type proper genre of this movie">
+        <input type="text" placeholder="genre">
+        <input type="text" placeholder="genre (optional)">
+        <input type="text" placeholder="genre (optional)">
       </div>
-    </div>
-    <div class="movieItem">
+    </div>    
+
+    <!-- movie 3 -->
+    <div class="movieItem" id="autocomplete3">
       <div class="movieImage">
         <img src="http://www.impawards.com/2013/posters/internship_ver5_xlg.jpg"
           width="300">
@@ -122,123 +134,63 @@
         This is about nerds at Google.
       </div>
       <div class="movieText">
-        <input type="text" placeholder="type proper genre of this movie">
-        <input type="text" placeholder="type proper genre of this movie">
-        <input type="text" placeholder="type proper genre of this movie">
+        <input type="text" placeholder="genre">
+        <input type="text" placeholder="genre (optional)">
+        <input type="text" placeholder="genre (optional)">
       </div>
     </div>
-    <input type="submit" value="submit">-->
+    <button type="button" onclick="upLoadInput('autocomplete', 'results'); return false;">Submit</button>
   </div>
-  
+
   <!-- Comparison results -->
   <div class="container" id="results">
     <div class="title">
       Compare what you wrote down with what you picked from the list.
     </div>
-<!--
-    <div class="movieItem">
-      <div class="movieImage">
-        <img src="http://www.bubblews.com/assets/images/news/1452175945_1367036341.jpg"
-          width="300">
-      </div>
-      <div class="movieTitle">
-        Notebook
-      </div>
-      <div class="movieDesc">
-        This is a romantic movie released in 2000...
-      </div>
-      <div class="movieText">
-        <input id = "genres-autocomplete" type="text" placeholder="type proper genre of this movie">
-        <input type="text" placeholder="type proper genre of this movie">
-        <input type="text" placeholder="type proper genre of this movie">
-      </div>
-    </div>
-    <div class="movieItem">
-      <div class="movieImage">
-        <img src="http://blog.dartmouthapologia.org/wp-content/uploads/2013/02/dark-knight.jpg"
-          width="300">
-      </div>
-      <div class="movieTitle">
-        The Dark Knight
-      </div>
-      <div class="movieDesc">
-        This is Christopher Nolan's Batman.
-      </div>
-      <div class="movieText">
-        <input type="text" placeholder="type proper genre of this movie">
-        <input type="text" placeholder="type proper genre of this movie">
-        <input type="text" placeholder="type proper genre of this movie">
-      </div>
-    </div>
-    <div class="movieItem">
-      <div class="movieImage">
-        <img src="http://www.impawards.com/2013/posters/internship_ver5_xlg.jpg"
-          width="300">
-      </div>
-      <div class="movieTitle">
-        Internship
-      </div>
-      <div class="movieDesc">
-        This is about nerds at Google.
-      </div>
-      <div class="movieText">
-        <input type="text" placeholder="type proper genre of this movie">
-        <input type="text" placeholder="type proper genre of this movie">
-        <input type="text" placeholder="type proper genre of this movie">
-      </div>
+
+    <div id="comparison1" class="movieItem">
+      <ul id="freeformList1">
+        <li>genre</li>
+        <li>genre if there is a second</li>
+        <li>genre if there is a third </li>
+      </ul>
+
+      <ul id="autocompleteList1">
+        <!--<li>genre</li>
+        <li>genre if there is a second</li>
+        <li>genre if there is a third </li>-->
+      </ul>
     </div>
 
-    <div class="movieItem">
-      <div class="movieImage">
-        <img src="http://www.bubblews.com/assets/images/news/1452175945_1367036341.jpg"
-          width="300">
-      </div>
-      <div class="movieTitle">
-        Notebook
-      </div>
-      <div class="movieDesc">
-        This is a romantic movie released in 2000...
-      </div>
-      <div class="movieText">
-        <input type="text" placeholder="type proper genre of this movie">
-        <input type="text" placeholder="type proper genre of this movie">
-        <input type="text" placeholder="type proper genre of this movie">
-      </div>
+    <div id="comparison2" class="movieItem">
+      <ul id="freeformList2">
+        <!--<li>genre</li>
+        <li>genre if there is a second</li>
+        <li>genre if there is a third </li>-->
+      </ul>
+
+      <ul id="autocompleteList2">
+        <!--<li>genre</li>
+        <li>genre if there is a second</li>
+        <li>genre if there is a third </li>-->
+      </ul>
     </div>
-    <div class="movieItem">
-      <div class="movieImage">
-        <img src="http://blog.dartmouthapologia.org/wp-content/uploads/2013/02/dark-knight.jpg"
-          width="300">
-      </div>
-      <div class="movieTitle">
-        The Dark Knight
-      </div>
-      <div class="movieDesc">
-        This is Christopher Nolan's Batman.
-      </div>
-      <div class="movieText">
-        <input type="text" placeholder="type proper genre of this movie">
-        <input type="text" placeholder="type proper genre of this movie">
-        <input type="text" placeholder="type proper genre of this movie">
-      </div>
+
+    <div id="comparison3" class="movieItem">
+      <ul id="freeformList3">
+        <!--<li>genre</li>
+        <li>genre if there is a second</li>
+        <li>genre if there is a third </li>-->
+      </ul>
+
+      <ul id="autocompleteList3">
+        <!--<li>genre</li>
+        <li>genre if there is a second</li>
+        <li>genre if there is a third </li>-->
+      </ul>
     </div>
-    <div class="movieItem">
-      <div class="movieImage">
-        <img src="http://www.impawards.com/2013/posters/internship_ver5_xlg.jpg"
-          width="300">
-      </div>
-      <div class="movieTitle">
-        Internship
-      </div>
-      <div class="movieDesc">
-        This is about nerds at Google.
-      </div>
-      <div class="movieText">
-        <input type="text" placeholder="type proper genre of this movie">
-        <input type="text" placeholder="type proper genre of this movie">
-        <input type="text" placeholder="type proper genre of this movie">
-      </div>
-    </div> -->
+
+    <p>Some text about metacrap, schemas, laziness</p>
   </div>
 
   <!--
