@@ -57,9 +57,8 @@ function upLoadInput(currentDiv, nextDiv) {
   
 function getMovieDetails() {
      var movies = [770672122, 770805418, 10056,10015, 13037, 771245728];
-     var $deferreds = [];
      $.each( movies, function(key, value) {
-          $deferreds[key] = $.ajax({
+          $.ajax({
               url: BASEURL + 'movies/' +value +'.json?' + KEY,
               dataType: "jsonp"
 
