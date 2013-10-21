@@ -33,8 +33,6 @@ $(document).ready(function() {
      $("#results").hide();
 
      $("#autocomplete input").autocomplete({
-        source: genres
-     });
         source: genres,
         change: function( event, ui ) {
           val = $(this).val();
