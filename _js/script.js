@@ -25,6 +25,66 @@ $(document).ready(function() {
                'Television',
                'Western'];
 
+    var genres_autocomplete = [{
+        label: 'Action & Adventure',
+        value: 'Action & Adventure'
+      }, {
+        label: 'Animation',
+        value: 'Animation'
+      }, {
+        label: 'Art House & International',
+        value: 'Art House & International'
+      }, {
+        label: 'Classics',
+        value: 'Classics'
+      }, {
+        label: 'Comedy',
+        value: 'Comedy'
+      }, {
+        label: 'Cult Movies',
+        value: 'Cult Movies'
+      }, {
+        label: 'Documentary',
+        value: 'Documentary'
+      }, {
+        label: 'Drama',
+        value: 'Drama'
+      }, {
+        label: 'Faith & Spirituality',
+        value: 'Faith & Spirituality'
+      }, {
+        label: 'Horror',
+        value: 'Horror'
+      }, {
+        label: 'Kids & Family',
+        value: 'Kids & Family'
+      }, {
+        label: 'Musical & Performing Arts',
+        value: 'Musical & Performing Arts'
+      }, {
+        label: 'Mystery & Suspense',
+        value: 'Mystery & Suspense'
+      }, {
+        label: 'Romance',
+        value: 'Romance'
+      }, {
+        label: 'Science Fiction & Fantasy',
+        value: 'Science Fiction & Fantasy'
+      }, {
+        label: 'Special Interest',
+        value: 'Special Interest'
+      }, {
+        label: 'Sports & Fitness',
+        value: 'Sports & Fitness'
+      }, {
+        label: 'Television',
+        value: 'Television'
+      }, {
+        label: 'Western',
+        value: 'Western'               
+      }
+    ];
+
     //Load the movie details onto page    
      getMovieDetails();
 
@@ -33,9 +93,22 @@ $(document).ready(function() {
      $("#results").hide();
 
      $("#autocomplete input").autocomplete({
-        source: genres
-     })
+        source: genres,
+        response: function (event, ui) {
+          // remove result and build search result again so that the result includes all genres.
+          ui.content.splice(0, ui.content.length);
+          for (var i = 0; i < genres_autocomplete.length; i++) {
+            ui.content.push(genres_autocomplete[i]);
+          }
+        }
+     });
 
+     $("#autocomplete input").blur(function() {
+        if ($.inArray(this.value, genres) === -1) {
+          this.value = "";
+          this.focus();
+        }
+     });
 });
 
 function upLoadInput(currentDiv, nextDiv) {
