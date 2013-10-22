@@ -172,6 +172,9 @@ function getMovieDetails() {
               $("#"+divs+" div.movieTitle").text(data.title);
               $("#"+divs+" div.movieDesc").text(data.critics_consensus);
 
+              var rDiv = "#resultMovie" + (key+1);
+              $(rDiv).append("<img src="+ data.posters.detailed +">");
+
             })
 
             .error(function () { 
