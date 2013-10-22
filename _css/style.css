@@ -67,6 +67,14 @@ img {
 	font-size: medium;
 }
 
+.movieItem ul {
+	text-align:center;
+	padding:0px;
+	list-style-type: none;
+	color:#263248;
+	font-size:large;
+}
+
 .container {
 	text-align: center;
 }
