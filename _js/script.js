@@ -33,18 +33,7 @@ $(document).ready(function() {
      $("#results").hide();
 
      $("#autocomplete input").autocomplete({
-        source: genres,
-        change: function( event, ui ) {
-          val = $(this).val();
-          exists = $.inArray(val,genres);
-          if (exists<0) {
-            var usrText = $(this).val();
-            $(this).val("")
-              .attr( "title", usrText + " didn't match any genre" )
-              .focus();;
-            return false;
-          }
-        }
+        source: genres
      })
 
 });
