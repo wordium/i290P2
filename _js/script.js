@@ -103,12 +103,12 @@ $(document).ready(function() {
         }
      });
 
-     $("#autocomplete input").blur(function() {
-        if ($.inArray(this.value, genres) === -1) {
-          this.value = "";
-          this.focus();
-        }
-     });
+     // $("#autocomplete input").blur(function() {
+     //    if ($.inArray(this.value, genres) === -1) {
+     //      this.value = "";
+     //      this.focus();
+     //    }
+     // });
 });
 
 function upLoadInput(currentDiv, nextDiv) {
