@@ -29,6 +29,8 @@ body {
 /*** basic styles ***/
 .title {
 	text-align:center;
+	font-size:1.5em;
+	padding-bottom:1em;
 }
 
 .instructions {
@@ -47,6 +49,10 @@ img {
 	border: 1px solid #000;
 }
 
+#autocompleteList3 {
+	padding-bottom:1.5em;
+}
+
 /*** movie info styles ***/
 .movieItem {
 	width: 33%;
@@ -55,8 +61,18 @@ img {
 	text-align: center;
 }
 
+.movieItem h4 {
+	text-align: left;
+	padding-left: 20px;
+	font-size: medium;
+}
+
 .container {
 	text-align: center;
+}
+
+.resultBox {
+	border-right:3px solid #263248;
 }
 
 button {
