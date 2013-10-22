@@ -26,6 +26,10 @@ body {
 	border: 10px solid #FF9800;
 } 
 
+li {
+	text-align: left;
+}
+
 /*** basic styles ***/
 .title {
 	text-align:center;
@@ -96,4 +100,8 @@ button {
 
 .movieText input[type=text] {
 	width: 20em;
+}
+
+#metacrap p {
+	text-align: justify;
 }
