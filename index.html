@@ -2,8 +2,9 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="_css/style.css">
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <link rel="stylesheet" href="_css/style.css">
+
   <script src="_js/jquery-1.10.2.min.js"></script>
   <script src="_js/jquery-ui-1.10.3.custom.min.js"></script>
   <script src="_js/script.js"></script>   
@@ -11,13 +12,13 @@
 
 <body> 
   <h1 class="title">
-    Genre Guesser
+    Movie Genre Guesser
   </h1>
 
   <!-- Freeform genre description -->
   <div class="container" id="freeform">
     <p class="instructions">
-      Below are three movies, which you may or may not have seen. For each, write down up to three genres that apply.
+      Below are three movies, which you may or may not have seen. For each, write down one to three genres that you think might apply.
     </p>
 
     <!-- Movie 1 -->
@@ -80,7 +81,7 @@
   <!-- Autocomplete genre description -->
   <div class="container" id="autocomplete">
     <p class="instructions">
-      Here are three different movies, which you may or may not have seen. For each, select up to three different genres that apply.
+      Here are three different movies, which you may or may not have seen. For each, write down one to three genres that you think might apply.
     </p>
 
     <!-- movie 1 -->
@@ -145,7 +146,7 @@
   <!-- Comparison results -->
   <div class="container" id="results">
     <div class="title">
-      Compare what you wrote down with what you picked from the list.
+      Compare your genre selections.
     </div>
 
     <div id="comparison1" class="movieItem">
@@ -190,7 +191,12 @@
       </ul>
     </div>
 
-    <p>Some text about metacrap, schemas, laziness</p>
+    <div>
+      <h4>Did you see a difference?</h4>
+      <p>
+        In Cory Doctorow's <a href="http://www.well.com/~doctorow/metacrap.htm">Metacrap</a>, we learn that <a href="http://www.well.com/~doctorow/metacrap.htm#2.2">people are lazy</a>, and <a href="http://www.well.com/~doctorow/metacrap.htm#2.5">schemas aren't neutral</a>. We hope to demonstrate the difference between completely freeform guesses (the first set of movies) and guesses that have some autocompletion suggestions (the second set of movies). Each set of movies are hand-picked to have similar genres, and while you might have written "action" for one, perhaps for the second, you used the suggested genre from Rotten Tomatoes of "Action & Adventure."
+      </p>
+    </div>
   </div>
 
   <!--
