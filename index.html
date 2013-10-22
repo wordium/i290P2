@@ -17,17 +17,18 @@
 
   <!-- Freeform genre description -->
   <div class="container" id="freeform">
-    <p class="instructions">
-      Below are three movies, which you may or may not have seen. For each, write down one to three genres that you think might apply.
-    </p>
+    <div class="instructions">
+      <p>Below are three movies, which you may or may not have seen.</p>
+      <p>For each, write down one to three genres that you think might apply.</p>
+    </div>
 
     <!-- Movie 1 -->
     <div class="movieItem" id="freeform1">
+      <div class="movieTitle">Notebook</div>
       <div class="movieImage">
         <img src="http://www.bubblews.com/assets/images/news/1452175945_1367036341.jpg"
           width="300">
       </div>
-      <div class="movieTitle">Notebook</div>
       <div class="movieDesc">
         This is a romantic movie released in 2000...
       </div>
@@ -40,12 +41,10 @@
 
     <!-- Movie 2 -->
     <div class="movieItem" id="freeform2">
+      <div class="movieTitle">The Dark Knight</div>
       <div class="movieImage">
         <img src="http://blog.dartmouthapologia.org/wp-content/uploads/2013/02/dark-knight.jpg"
           width="300">
-      </div>
-      <div class="movieTitle">
-        The Dark Knight
       </div>
       <div class="movieDesc">
         This is Christopher Nolan's Batman.
@@ -59,12 +58,10 @@
 
     <!-- Movie 3 -->
     <div class="movieItem" id="freeform3">
+      <div class="movieTitle">Internship</div>
       <div class="movieImage">
         <img src="http://www.impawards.com/2013/posters/internship_ver5_xlg.jpg"
           width="300">
-      </div>
-      <div class="movieTitle">
-        Internship
       </div>
       <div class="movieDesc">
         This is about nerds at Google.
@@ -75,23 +72,22 @@
         <input type="text" placeholder="genre (optional)">
       </div>
     </div>
-    <button type="button" onclick="upLoadInput('freeform', 'autocomplete'); return false;">Submit</button>
+    <button type="button" onclick="upLoadInput('freeform', 'autocomplete'); return false;">Guess!</button>
   </div>
 
   <!-- Autocomplete genre description -->
   <div class="container" id="autocomplete">
-    <p class="instructions">
-      Here are three different movies, which you may or may not have seen. For each, write down one to three genres that you think might apply.
-    </p>
+    <div class="instructions">
+      <p>Below are three movies, which you may or may not have seen.</p>
+      <p>For each, write down one to three genres that you think might apply.</p>
+    </div>
 
     <!-- movie 1 -->
     <div class="movieItem" id="autocomplete1">
+      <div class="movieTitle">Notebook</div>
       <div class="movieImage">
         <img src="http://www.bubblews.com/assets/images/news/1452175945_1367036341.jpg"
           width="300">
-      </div>
-      <div class="movieTitle">
-        Notebook
       </div>
       <div class="movieDesc">
         This is a romantic movie released in 2000...
@@ -105,12 +101,10 @@
 
     <!-- movie 2 -->
     <div class="movieItem" id="autocomplete2">
+      <div class="movieTitle">The Dark Knight</div>
       <div class="movieImage">
         <img src="http://blog.dartmouthapologia.org/wp-content/uploads/2013/02/dark-knight.jpg"
           width="300">
-      </div>
-      <div class="movieTitle">
-        The Dark Knight
       </div>
       <div class="movieDesc">
         This is Christopher Nolan's Batman.
@@ -124,12 +118,10 @@
 
     <!-- movie 3 -->
     <div class="movieItem" id="autocomplete3">
+      <div class="movieTitle">Internship</div>
       <div class="movieImage">
         <img src="http://www.impawards.com/2013/posters/internship_ver5_xlg.jpg"
           width="300">
-      </div>
-      <div class="movieTitle">
-        Internship
       </div>
       <div class="movieDesc">
         This is about nerds at Google.
@@ -140,7 +132,7 @@
         <input type="text" placeholder="genre (optional)">
       </div>
     </div>
-    <button type="button" onclick="upLoadInput('autocomplete', 'results'); return false;">Submit</button>
+    <button type="button" onclick="upLoadInput('autocomplete', 'results'); return false;">Guess!</button>
   </div>
 
   <!-- Comparison results -->

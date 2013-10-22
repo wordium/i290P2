@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans);
+
 /*** Colors ***/
 /*
 Black 000000
@@ -10,7 +12,7 @@ Orange FF9800
 /*** structure ***/
 
 body {
-	font-family: 'Helvetica', sans-serif;
+	font-family: "Noto Sans", sans-serif;
 	background-color: #263248;
 	color: #fff;
 }
@@ -21,7 +23,7 @@ body {
 	padding: 3px;
 	background-color: #7E8AA2;
 	border-radius: 6px;
-	border: 5px solid #FF9800;
+	border: 10px solid #FF9800;
 } 
 
 /*** basic styles ***/
@@ -30,7 +32,12 @@ body {
 }
 
 .instructions {
-	text-align: center;
+	padding: 20px;
+}
+
+.instructions p {
+	margin: 0;
+	font-size: 0.75em;
 }
 
 img {
@@ -48,12 +55,19 @@ img {
 	text-align: center;
 }
 
-.container input[type=submit] {
-	margin: auto auto;
+.container {
+	text-align: center;
+}
+
+button {
+	margin: 10px;
 }
 
 .movieDesc {
-	margin-top: 0.5em;
+  margin: 10px 50px;
+	font-size: 0.75em;
+	height: 100px;
+	text-align: justify;
 }
 
 .movieText input[type=text] {
