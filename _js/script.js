@@ -104,8 +104,8 @@ $(document).ready(function() {
 function upLoadInput(currentDiv, nextDiv) {
     var textBox;
     // Loop over the required textBoxes, looking for an empty one
-     $( "#"+currentDiv + " input.reqText").each(function(){
-        if ($(this).val() == "") {
+     $( '#'+currentDiv + ' input.reqText').each(function(){
+        if ($(this).val() == '') {
           // Get the current textBox
           textBox = $(this)
           // Exit loop we
@@ -118,24 +118,24 @@ function upLoadInput(currentDiv, nextDiv) {
     if (textBox) {
       // Give focus to the empty textBox.
       textBox.focus();
-      document.getElementById(currentDiv+"Lbl").style.color="red"
+      document.getElementById(currentDiv+'Lbl').style.color='red'
       return;
     }
 
      // Close current view and open a new one
-     $( "#"+currentDiv).fadeOut('fast');
-     $( "#"+nextDiv).fadeIn('slow');
+     $( '#'+currentDiv).fadeOut('fast');
+     $( '#'+nextDiv).fadeIn('slow');
      // Loop over the textBoxes, checking for input and populate on results page
-     $( "#"+currentDiv + " input").each(function(i){
+     $( '#'+currentDiv + ' input').each(function(i){
           var srcText = $(this).val();
-          if (i <3 && srcText != "") {
-               $("#"+currentDiv+"List1").append('<li>' + srcText + '</li>')
+          if (i <3 && srcText != '') {
+               $('#'+currentDiv+"List1").append('<li>' + srcText + '</li>')
           }
-          else if (i < 6 && srcText != "") {
-               $("#"+currentDiv+"List2").append('<li>' + srcText + '</li>')
+          else if (i < 6 && srcText != '') {
+               $('#'+currentDiv+'List2').append('<li>' + srcText + '</li>')
           }
-          else if (srcText != "") {
-               $("#"+currentDiv+"List3").append('<li>' + srcText + '</li>')             
+          else if (srcText != '') {
+               $('#'+currentDiv+'List3').append('<li>' + srcText + '</li>')             
           }
      });
 }
@@ -148,7 +148,7 @@ function getMovieDetails() {
                       2:[10056, 9818, 9385, 770678818,12897, 770675766],
                       3:[714976247, 770673029, 387285258, 10042, 771264989, 10437]};
     //Gives the last list used   
-    if(typeof(Storage)!=="undefined") {
+    if(typeof(Storage)!=='undefined') {
       if (localStorage.lastList && localStorage.lastList < 3) {
         localStorage.lastList=Number(localStorage.lastList)+1;
       }
@@ -157,36 +157,36 @@ function getMovieDetails() {
       }
       listStart = localStorage.lastList
     }
-    else{
-        listStart =0;
-      }
+    else {
+     listStart =0;
+    }
 
      // For each movie load the details onto page 
      $.each( movies[listStart], function(key, value) {
           $.ajax({
               url: BASEURL + 'movies/' +value +'.json?' + APIKEY,
-              dataType: "jsonp"
+              dataType: 'jsonp'
 
           }).success(function (data) {
               if ((key % 2) == 0) {
-                    var divs = "freeform" + ((key/2|0)+1);
+                    var divs = 'freeform' + ((key/2|0)+1);
                }
                else {
-                    var divs = "autocomplete" + ((key/2|0)+1)
+                    var divs = 'autocomplete' + ((key/2|0)+1)
                }
 
-              $("#"+divs+" img").attr('src', data.posters.detailed);
-              $("#"+divs+" div.movieTitle").text(data.title);
-              $("#"+divs+" div.movieDesc").text(data.critics_consensus);
+              $('#'+divs+' img').attr('src', data.posters.detailed);
+              $('#'+divs+' div.movieTitle').text(data.title);
+              $('#'+divs+' div.movieDesc').text(data.critics_consensus);
 
-              var rDiv = "#resultMovie" + (key+1);
-              $(rDiv).append("<img src="+ data.posters.detailed +">");
+              var rDiv = '#resultMovie' + (key+1);
+              $(rDiv).append('<img src='+ data.posters.detailed +'>');
 
             })
 
             .error(function () { 
                console.log(error);
-               console.log("Error: "+error.statusText);
+               console.log('Error: '+error.statusText);
                })
             ;
       });
