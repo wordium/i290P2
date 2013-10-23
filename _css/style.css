@@ -67,6 +67,10 @@ button {
 	padding-bottom: 1.5em;
 }
 
+#autocomplete, #results {
+	display: none;
+}
+
 /*** movie info styles ***/
 .movieItem {
 	width: 33%;

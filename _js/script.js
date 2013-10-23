@@ -88,11 +88,6 @@ $(document).ready(function() {
     //Load the movie details onto page    
      getMovieDetails();
 
-     // 
-     $("#autocomplete").hide();
-     $("#results").hide();
-     //$(".warnLbl").hide()
-
      $("#autocomplete input").autocomplete({
         source: genres,
         response: function (event, ui) {
