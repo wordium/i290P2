@@ -148,11 +148,10 @@ function upLoadInput(currentDiv, nextDiv) {
 function getMovieDetails() {
     var listStart;
     //List of All Movies To Be Used
-    var moviesALL = [112770454, 771245728, 10606, 10696, 24, 13037, 
-                      16380, 771249562, 12231, 10435, 13106, 770682079,
-                      14840, 9818, 9385, 770678818,12897, 770675766,
-                      714976247, 770673029, 387285258, 10042, 771264989, 10437];
-
+    var movies = {0:[112770454, 771245728, 10606, 10696, 24, 13037], 
+                      1:[771264988, 771249562, 12231, 10435, 13106, 770682079],
+                      2:[10056, 9818, 9385, 770678818,12897, 770675766],
+                      3:[714976247, 770673029, 387285258, 10042, 771264989, 10437]};
     //Gives the last list used   
     if(typeof(Storage)!=="undefined") {
       if (localStorage.lastList && localStorage.lastList < 3) {
@@ -161,19 +160,14 @@ function getMovieDetails() {
       else {
         localStorage.lastList=0;
       }
-      listStart = localStorage.lastList * 6
+      listStart = localStorage.lastList
     }
     else{
         listStart =0;
       }
 
-    //var randomStart = ((Math.floor(Math.random() * (4))) * 6);
-
-    // List of movies to be loaded.
-    var movies = moviesALL.slice(listStart,listStart+6);
-
      // For each movie load the details onto page 
-     $.each( movies, function(key, value) {
+     $.each( movies[listStart], function(key, value) {
           $.ajax({
               url: BASEURL + 'movies/' +value +'.json?' + APIKEY,
               dataType: "jsonp"
