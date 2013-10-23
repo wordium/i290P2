@@ -132,7 +132,7 @@ function upLoadInput(currentDiv, nextDiv) {
     }
 
      // Close current view and open a new one
-     $( "#"+currentDiv).fadeOut('slow');
+     $( "#"+currentDiv).fadeOut('fast');
      $( "#"+nextDiv).fadeIn('slow');
      // Loop over the textBoxes, checking for input and populate on results page
      $( "#"+currentDiv + " input").each(function(i){

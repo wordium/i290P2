@@ -9,58 +9,62 @@ White FFFFFF
 Orange FF9800
 */
 
-/*** structure ***/
+/*** basic styles ***/
 
 body {
 	font-family: "Noto Sans", sans-serif;
 	color: #263248;
+	padding: 0;
+	margin: 0;
 
+	/* striped background from http://lea.verou.me/css3patterns/ */
 	background-color: red;
 	background-image: linear-gradient(90deg, transparent 50%, rgba(255,255,255,.9) 50%);
 	background-size: 50px 50px;
 }
 
+img {
+	height: 267px;	/* We're using only the detailed photos, and assume this size */
+	width: 180px;
+	overflow: hidden;
+	border: 1px solid #000;
+}
+
+button {
+	margin: 10px;
+}
+
 .container {
-	width: 1000px;
+	width: 60em;
 	margin: 1em auto 10em ;
-	padding: 3px;
+	padding: .5em;
 	background-color: #FFF;
 	border-radius: 6px;
 	border: 1px solid red;
 } 
 
-li {
-	text-align: left;
-}
-
-/*** basic styles ***/
-.title {
+#title {
 	font-family: "Sigmar One", sans-serif;
 	text-align: center;
 	font-size: 2em;
 	padding: .5em;
 	background-color: #FFD678;
 	letter-spacing: -.1em;
-}
-
-.instructions {
-	padding: 20px;
-}
-
-.instructions p {
+	position: relative;
+	width: 100%;
+	top: 0;
 	margin: 0;
-	font-size: 0.75em;
+	margin-bottom: 1.2em;
 }
 
-img {
-	height: 267px;
-	width: 180px;
-	overflow: hidden;
-	border: 1px solid #000;
+#footer {
+	background-color: #FFD678;
+	text-align: center;
+	padding: .5em;
 }
 
 #autocompleteList3 {
-	padding-bottom:1.5em;
+	padding-bottom: 1.5em;
 }
 
 /*** movie info styles ***/
@@ -73,16 +77,14 @@ img {
 
 .movieItem h4 {
 	text-align: left;
-	padding-left: 20px;
+	padding-left: 3em;
 	font-size: medium;
 }
 
 .movieItem ul {
-	text-align:center;
-	padding:0px;
+	text-align: center;
+	padding: 0;
 	list-style-type: none;
-	color:#263248;
-	font-size:large;
 }
 
 .container {
@@ -90,22 +92,28 @@ img {
 }
 
 .resultBox {
-	border-right:3px solid #263248;
-}
-
-button {
-	margin: 10px;
+	border-right: 3px solid #263248;
 }
 
 .movieDesc {
   margin: 10px 50px;
 	font-size: 0.75em;
-	height: 100px;
+	height: 110px;
 	text-align: justify;
 }
 
 .movieText input[type=text] {
 	width: 20em;
+}
+
+/*** Page text ***/
+.instructions {
+	padding: 20px;
+}
+
+.instructions p {
+	margin: 0;
+	font-size: 0.75em;
 }
 
 #metacrap p {
