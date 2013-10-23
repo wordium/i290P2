@@ -118,7 +118,7 @@ function upLoadInput(currentDiv, nextDiv) {
     if (textBox) {
       // Give focus to the empty textBox.
       textBox.focus();
-      document.getElementById(currentDiv+'Lbl').style.color='red'
+      document.getElementById(currentDiv+'Lbl').style.display='block'
       return;
     }
 
