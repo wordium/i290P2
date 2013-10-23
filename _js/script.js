@@ -88,7 +88,7 @@ $(document).ready(function() {
     //Load the movie details onto page    
      getMovieDetails();
 
-     $("#autocomplete input").autocomplete({
+     $('#autocomplete input').autocomplete({
         source: genres,
         response: function (event, ui) {
           // remove result and build search result again so that the result includes all genres.
@@ -129,7 +129,7 @@ function upLoadInput(currentDiv, nextDiv) {
      $( '#'+currentDiv + ' input').each(function(i){
           var srcText = $(this).val();
           if (i <3 && srcText != '') {
-               $('#'+currentDiv+"List1").append('<li>' + srcText + '</li>')
+               $('#'+currentDiv+'List1').append('<li>' + srcText + '</li>')
           }
           else if (i < 6 && srcText != '') {
                $('#'+currentDiv+'List2').append('<li>' + srcText + '</li>')
@@ -185,7 +185,7 @@ function getMovieDetails() {
             })
 
             .error(function () { 
-               console.log(error);
+               // console.log(error);
                console.log('Error: '+error.statusText);
                })
             ;

@@ -8,10 +8,11 @@ Team members and roles:
  - Brian Murphy: CSS, writing
  - Eunkwang Joo: CSS, HTML
  - Chalenge Masekera: JS
- - Sandra Helsley: CSS, writing
+ - Sandra Helsley: CSS, writing, code cleanup
 
 Technologies used: jQuery, jQuery UI autocomplete, Rotten Tomatoes API
 
 Link to demo version: http://people.ischool.berkeley.edu/~syh/info290ta/p2/
 
 Known bugs: 
+ - Occasionally an image fails to show up, but we couldn't reproduce the bug reliably, and suspect it has to do with connection issues.
