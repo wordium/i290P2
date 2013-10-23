@@ -96,7 +96,7 @@ button {
 }
 
 .movieDesc {
-  margin: 10px 50px;
+    margin: 10px 50px;
 	font-size: 0.75em;
 	height: 110px;
 	text-align: justify;
@@ -118,4 +118,9 @@ button {
 
 #metacrap p {
 	text-align: justify;
+}
+
+.warnLbl {
+	font-size: 0.75em;
+	color: white;
 }

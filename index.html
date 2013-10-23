@@ -72,6 +72,7 @@
         <input type="text" placeholder="genre (optional)">
       </div>
     </div>
+    <label id="freeformLbl" class="warnLbl">First Genre Cannot Be Empty</label>
     <button type="button" onclick="upLoadInput('freeform', 'autocomplete'); return false;">Guess!</button>
   </div>
 
@@ -132,7 +133,8 @@
         <input type="text" placeholder="genre (optional)">
       </div>
     </div>
-    <button type="button" onclick="upLoadInput('autocomplete', 'results'); return false;">Guess!</button>
+    <label id="autocompleteLbl" class="warnLbl">First Genre Cannot Be Empty</label>
+    <button type="button" onclick="upLoadInput('autocomplete', 'results'); return false;">Guess!</button> 
   </div>
 
   <!-- Comparison results -->

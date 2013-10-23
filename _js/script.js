@@ -1,4 +1,4 @@
-var KEY = 'apikey=bxyrp4av33rguwg65v78tyhr'; // Rotten Tomatoes API key. Documentation here: http://developer.rottentomatoes.com/docs
+var APIKEY = 'apikey=bxyrp4av33rguwg65v78tyhr'; // Rotten Tomatoes API key. Documentation here: http://developer.rottentomatoes.com/docs
 var BASEURL = 'http://api.rottentomatoes.com/api/public/v1.0/'; // Base URL for making calls to the RT API.
 
 // When the DOM is ready (ie. now), init scripts.
@@ -91,6 +91,7 @@ $(document).ready(function() {
      // 
      $("#autocomplete").hide();
      $("#results").hide();
+     //$(".warnLbl").hide()
 
      $("#autocomplete input").autocomplete({
         source: genres,
@@ -103,12 +104,6 @@ $(document).ready(function() {
         }
      });
 
-     // $("#autocomplete input").blur(function() {
-     //    if ($.inArray(this.value, genres) === -1) {
-     //      this.value = "";
-     //      this.focus();
-     //    }
-     // });
 });
 
 function upLoadInput(currentDiv, nextDiv) {
@@ -128,6 +123,7 @@ function upLoadInput(currentDiv, nextDiv) {
     if (textBox) {
       // Give focus to the empty textBox.
       textBox.focus();
+      document.getElementById(currentDiv+"Lbl").style.color="red"
       return;
     }
 
@@ -150,22 +146,38 @@ function upLoadInput(currentDiv, nextDiv) {
 }
   
 function getMovieDetails() {
-    // List of movies to be loaded.
-     var movies = [770672122, 770805418, 10056,10015, 13037, 771245728];
+    var listStart;
+    //List of All Movies To Be Used
+    var movies = {0:[112770454, 771245728, 10606, 10696, 24, 13037], 
+                      1:[771264988, 771249562, 12231, 10435, 13106, 770682079],
+                      2:[10056, 9818, 9385, 770678818,12897, 770675766],
+                      3:[714976247, 770673029, 387285258, 10042, 771264989, 10437]};
+    //Gives the last list used   
+    if(typeof(Storage)!=="undefined") {
+      if (localStorage.lastList && localStorage.lastList < 3) {
+        localStorage.lastList=Number(localStorage.lastList)+1;
+      }
+      else {
+        localStorage.lastList=0;
+      }
+      listStart = localStorage.lastList
+    }
+    else{
+        listStart =0;
+      }
 
      // For each movie load the details onto page 
-     $.each( movies, function(key, value) {
+     $.each( movies[listStart], function(key, value) {
           $.ajax({
-              url: BASEURL + 'movies/' +value +'.json?' + KEY,
+              url: BASEURL + 'movies/' +value +'.json?' + APIKEY,
               dataType: "jsonp"
 
           }).success(function (data) {
-
-              if (key < 3) {
-                    var divs = "freeform" + (key+1);
+              if ((key % 2) == 0) {
+                    var divs = "freeform" + ((key/2|0)+1);
                }
                else {
-                    var divs = "autocomplete" + (key-2)
+                    var divs = "autocomplete" + ((key/2|0)+1)
                }
 
               $("#"+divs+" img").attr('src', data.posters.detailed);
